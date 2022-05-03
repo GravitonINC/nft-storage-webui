@@ -71,7 +71,7 @@ export default function TrafficUpDownView({
         <img src={RedDownGraphIcon} alt='red' />
         <img src={RedDownIcon} width={6} height={6} style={{ marginTop: 6, marginLeft: 8 }} alt='red' />
         <StyledText color='#FA5050'>
-          -{growRate}%
+          {growRate}%
         </StyledText>
       </>}
     </StyledContainer>

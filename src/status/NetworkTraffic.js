@@ -24,7 +24,6 @@ const TrafficWidgetContainer = styled.div`
     flex-direction: column;
   }
 `
-
 class NetworkTraffic extends React.Component {
   state = {
     downSpeed: {
@@ -34,7 +33,26 @@ class NetworkTraffic extends React.Component {
     upSpeed: {
       filled: 0,
       total: 125000 // Starts with 1 Mb/s max
+    },
+    upGrowRate: 0,
+    downGrowRate: 0
+  }
+
+  getGrowRate(prevState, up, down) {
+    let downRate = 0
+    let upRate = 0
+    if (prevState?.downSpeed?.filled !== 0) {
+      downRate = Math.round((down - prevState.downSpeed.filled) * 100 / prevState.downSpeed.filled)
+    } else {
+      downRate = 0
     }
+
+    if (prevState?.upSpeed?.filled !== 0) {
+      upRate = Math.round((up - prevState.upSpeed.filled) * 100 / prevState.upSpeed.filled)
+    } else {
+      upRate = 0
+    }
+    return { downRate, upRate }
   }
 
   componentDidUpdate(_, prevState) {
@@ -42,7 +60,10 @@ class NetworkTraffic extends React.Component {
 
     const down = nodeBandwidth ? parseInt(nodeBandwidth.rateIn.toFixed(0), 10) : 0
     const up = nodeBandwidth ? parseInt(nodeBandwidth.rateOut.toFixed(0), 10) : 0
-
+    const { downRate, upRate } = this.getGrowRate(prevState, up, down)
+    console.log({
+      downRate, upRate
+    })
     if (down !== prevState.downSpeed.filled || up !== prevState.upSpeed.filled) {
       this.setState({
         downSpeed: {
@@ -52,14 +73,16 @@ class NetworkTraffic extends React.Component {
         upSpeed: {
           filled: up,
           total: Math.max(up, prevState.upSpeed.total)
-        }
+        },
+        downGrowRate: downRate,
+        upGrowRate: upRate
       })
     }
   }
 
   render() {
     const { t } = this.props
-    const { downSpeed, upSpeed } = this.state
+    const { downSpeed, upSpeed, downGrowRate, upGrowRate } = this.state
 
     const down = filesize(downSpeed.filled, {
       standard: 'iec',
@@ -74,6 +97,10 @@ class NetworkTraffic extends React.Component {
       output: 'array',
       round: 0,
       bits: false
+    })
+
+    console.log({
+      downGrowRate, upGrowRate
     })
 
     return (
@@ -94,7 +121,7 @@ class NetworkTraffic extends React.Component {
                     {down[1]}/s
                   </RetroText>
                 </RetroContainer>
-                <TrafficUpDownView growRate={12.25} />
+                <TrafficUpDownView growRate={downGrowRate} />
               </div>
             </div>
           </RetroContainer>
@@ -112,7 +139,7 @@ class NetworkTraffic extends React.Component {
                     {up[1]}/s
                   </RetroText>
                 </RetroContainer>
-                <TrafficUpDownView growRate={-2.25} />
+                <TrafficUpDownView growRate={upGrowRate} />
               </div>
             </div>
           </RetroContainer>
