@@ -21,7 +21,7 @@ Definition.propTypes = {
 
 export const Term = ({ children, width = 100 }) => {
   return (
-    <dt className='db ma0 pb1 pb0-ns dtc-ns w95fa tracked ttu' style={{ width, fontSize: '12px', color: 'rgba(255, 255, 255, 0.6)' }}>
+    <dt className='db ma0 pb1 pb0-ns dtc-ns spacegrotesk tracked ttu' style={{ width, fontSize: '12px', color: 'rgba(255, 255, 255, 0.6)' }}>
       {children}
     </dt>
   )
@@ -29,7 +29,7 @@ export const Term = ({ children, width = 100 }) => {
 
 export const Description = ({ children, advanced }) => {
   return (
-    <dd className={`db dtc-ns ma0 w95fa white ${advanced ? 'word-wrap pa2 f7' : 'truncate f7 f6-ns'}`}>
+    <dd className={`db dtc-ns ma0 robotomono white ${advanced ? 'word-wrap pa2 f7' : 'truncate f7 f6-ns'}`}>
       {children}
     </dd>
   )

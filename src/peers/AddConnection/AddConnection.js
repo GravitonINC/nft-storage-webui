@@ -109,11 +109,27 @@ class AddConnection extends React.Component {
 
     return (
       <div style={{ width: '160px', height: '30px' }}>
-        <RetroGradientButton width='160px' height='38px' minHeight='28px' onClick={this.toggleModal} className='textinputmodal-body white spacegrotesk gray pb2' style={{ marginTop: '1px' }} bg='bg-navy' color='white'>
-          <RetroText className='spacegrotesk white font-12 flex'>
-            {t('addConnection')}&nbsp;&nbsp;
-            <PlusIcon />
-          </RetroText>
+        <RetroGradientButton
+          width='160px'
+          height='38px'
+          minHeight='28px'
+          onClick={this.toggleModal}
+          className='textinputmodal-body white fs12 spacegrotesk gray pb2'
+          style={{ marginTop: '1px' }}
+          bg='bg-navy' color='white'
+          onMouseEnter={() => {
+            console.log('onMouse Enter ')
+            this.setState({ hoverAddConnection: true })
+          }}
+          onMouseLeave={() => {
+            this.setState({ hoverAddConnection: false })
+          }}
+
+        >
+          {/* <RetroText className='spacegrotesk white font-12 flex'> */}
+          {t('addConnection')}&nbsp;&nbsp;
+          <PlusIcon gradient={this.state.hoverAddConnection} />
+          {/* </RetroText> */}
         </RetroGradientButton>
 
         <Overlay show={open} onLeave={this.toggleModal}>
@@ -140,10 +156,10 @@ class AddConnection extends React.Component {
             </ModalBody>
 
             <ModalActions justify='between'>
-              <RetroGradientButton width='163px' height='38px' className='ma2 tc' bg='bg-gray' onClick={this.toggleModal}>
-                <RetroText className='white spacegrotesk'>
-                  {t('actions.cancel')}
-                </RetroText>
+              <RetroGradientButton width='163px' height='38px' className='ma2 tc fs12 spacegrotesk' bg='bg-gray' onClick={this.toggleModal}>
+                {/* <RetroText className='white spacegrotesk'> */}
+                {t('actions.cancel')}
+                {/* </RetroText> */}
               </RetroGradientButton>
               <FullGradientButton width='163px' height='38px' className='ma2 tc ' bg='bg-teal' disabled={this.isDisabled} onClick={this.onSubmit}>
                 <RetroText color={this.isDisabled ? '#9C9C9C' : '#000'} className='spacegrotesk'>

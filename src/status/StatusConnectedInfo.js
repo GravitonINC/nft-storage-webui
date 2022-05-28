@@ -32,17 +32,17 @@ export const StatusConnectedInfo = ({ t, peersCount, repoSize }) => {
   }
 
   return (
-    <p style={{ fontSize: '14px', fontWeight: '400' }} className='pixm ma0 pb3 lh-copy'>
-      <span className='db dib-ns w95fa' style={{ ...purpleFontStyle }}>
+    <p style={{ fontSize: '14px', fontWeight: '400' }} className='spacegrotesk ma0 pb3 lh-copy'>
+      <span className='db dib-ns robotomono' style={{ ...purpleFontStyle }}>
         {repoSizeStr[0]}
-        <a className='pixm f7' href='#/files' style={{ ...purpleFontStyle }}>
+        <a className='robotomono f7' href='#/files' style={{ ...purpleFontStyle }}>
           {humanRepoSize + repoSizeStr[1]}
         </a>
       </span>
       <span className='dn di-ns' style={{ ...purpleFontStyle }}> — </span>
-      <span className='db mt1 mt0-ns dib-ns w95fa' style={{ ...purpleFontStyle }}>
+      <span className='db mt1 mt0-ns dib-ns robotomono' style={{ ...purpleFontStyle }}>
         {peersCountStr[0]}
-        <a className='pixm f7' href='#/peers' style={{ ...purpleFontStyle }}>
+        <a className='robotomono f7' href='#/peers' style={{ ...purpleFontStyle }}>
           {peersCount.toString() + peersCountStr[1]}
         </a>
       </span>

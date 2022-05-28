@@ -26,7 +26,6 @@ const FullGradientButton = styled.button`
     background-size: 300%;
     background-position: right center;
   }
-
 `
 
 export default FullGradientButton

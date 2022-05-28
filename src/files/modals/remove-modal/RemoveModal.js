@@ -76,10 +76,10 @@ const RemoveModal = ({ t, tReady, onCancel, onRemove, files, foldersCount, files
       </ModalBody>
 
       <ModalActions justify='between mt4'>
-        <RetroGradientButton width='calc((100% - 40px) / 2)' height={'38px'} onClick={onCancel}>
-          <RetroText color='white' className='tc spacegrotesk'>
-            {t('app:actions.cancel')}
-          </RetroText>
+        <RetroGradientButton className='fs12' width='calc((100% - 40px) / 2)' height={'38px'} onClick={onCancel}>
+          {/* <RetroText color='white' className='tc spacegrotesk'> */}
+          {t('app:actions.cancel')}
+          {/* </RetroText> */}
         </RetroGradientButton>
         <FullGradientButton width='calc((100% - 40px) / 2)' height={'38px'} onClick={handleRemove}>
           <RetroText color='white' className='tc spacegrotesk'>

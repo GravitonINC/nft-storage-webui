@@ -77,7 +77,7 @@ class AddByPathModal extends React.Component {
     return !this.validatePath(this.state.path)
   }
 
-  render () {
+  render() {
     const {
       t, tReady, onCancel, onSubmit, className, ...props
     } = this.props
@@ -127,10 +127,10 @@ class AddByPathModal extends React.Component {
         </ModalBody>
 
         <ModalActions justify='between' className=' ph3'>
-          <RetroGradientButton width='calc((100% - 40px) / 2)' height='38px' className='tc' onClick={onCancel}>
-            <RetroText className='white spacegrotesk'>
-              {t('actions.cancel')}
-            </RetroText>
+          <RetroGradientButton width='calc((100% - 40px) / 2)' height='38px' className='tc fs12' onClick={onCancel}>
+            {/* <RetroText className='white spacegrotesk'> */}
+            {t('actions.cancel')}
+            {/* </RetroText> */}
           </RetroGradientButton>
           <FullGradientButton width='calc((100% - 40px) / 2)' height='38px' className='tc' disabled={this.isDisabled} onClick={this.onSubmit}>
             <RetroText className='white spacegrotesk'>

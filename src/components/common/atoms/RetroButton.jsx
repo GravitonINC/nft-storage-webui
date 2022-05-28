@@ -36,7 +36,8 @@ const StyledButton = styled.button`
 
 const StyledContainer = styled.div`
   /* Basic */
-  display: flex;
+  display: -webkit-box;
+  /* flex-direction: row; */
   align-items: center;
   justify-content: center;
   padding: 1px;

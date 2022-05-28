@@ -11,7 +11,7 @@ import filesize from 'filesize'
 
 import Point from '../icons/retro/Point'
 
-defaults.global.defaultFontFamily = 'W95FA'
+defaults.global.defaultFontFamily = 'SpaceGrotesk-Regular'
 defaults.global.defaultFontColor = '#D3C85F'
 defaults.global.defaultFontSize = 12
 
@@ -36,19 +36,19 @@ const getXLabel = v => {
 }
 
 const defaultSettings = {
-  defaultFontFamily: 'W95FA',
+  defaultFontFamily: 'SpaceGrotesk-Regular',
   responsive: true,
   tooltips: {
     mode: 'index',
     intersect: false,
     enabled: false
   },
-  hover: { intersect: false, mode: 'index', animationDuration: 0 },
+  hover: { intersect: false, mode: 'index', animationDuration: 0.3 },
   scales: {
     xAxes: [{
       type: 'time',
       time: {
-        minUnit: 'second'
+        minUnit: 'minute'
       },
       display: true,
       gridLines: {
@@ -95,7 +95,7 @@ const Tooltip = ({ t, bw, show, pos }) => {
   }
 
   return (
-    <div className='sans-serif absolute pa2' style={{
+    <div className='spacegrotesk absolute pa2' style={{
       top: `${pos.top + window.scrollY}px`,
       left: `${pos.left - 45}px`,
       transform: 'translateY(calc(-100% - 10px))',
@@ -112,7 +112,7 @@ const Tooltip = ({ t, bw, show, pos }) => {
         borderRight: '8px solid transparent',
         borderLeft: '8px solid transparent'
       }} />
-      <div className='flex-column items-center justify-center w95fa'>
+      <div className='flex-column items-center justify-center spacegrotesk'>
         {bw.in && (
           <div className='dt-row'>
             <span className='dtc f6 tr'>{t('app:terms.in').toLowerCase()}:</span>
@@ -165,6 +165,8 @@ function NodeBandwidthChart(props) {
             label: t('app:terms.out'),
             data: nodeBandwidthChartData.out,
             borderColor: '#BDFF69',
+            shadowColor: '#BDFF699',
+            shadowBlur: 5,
             borderWidth: 1,
             pointBackgroundColor: '#BDFF69',
             pointRadius: 0,
@@ -221,7 +223,7 @@ function NodeBandwidthChart(props) {
               key={index}
               id={dataset.borderColor}
               aria-hidden={true}
-              className='flex mr3 w95fa white pointer'
+              className='flex mr3 spacegrotesk white pointer'
               onClick={(event) => handleLegendClick(event, index, chartInstance)}>
               <Point style={{ pointerEvents: 'none', marginRight: '10px', marginTop: '5px' }} color={dataset.borderColor} />
               <div style={{ pointerEvents: 'none', fontSize: '14px' }}>{dataset.label}</div>
@@ -263,11 +265,7 @@ function NodeBandwidthChart(props) {
 
   return (
     <div>
-      <div className='flex items-start'>
-        {/* <Title>{t('bandwidthOverTime')}</Title> */}
-        {/* {legend} */}
-      </div>
-      <Line data={data()} options={options} ref={onRefChange} />
+      <Line data={data()} options={options} ref={onRefChange} width='100%' height={'34vw'} />
     </div>
   )
 }

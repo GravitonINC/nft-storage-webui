@@ -287,17 +287,17 @@ export const FilesList = ({
                 {t('app:terms.name')} {sortByIcon(sorts.BY_NAME)}
               </button>
             </div>
-            <div style={{ color: 'rgba(255, 255, 255, 1)' }} className='pl2 pr1 tr f6 spacegrotesk flex-none db mw4'>
+            <div style={{ color: 'rgba(255, 255, 255, 1)', width: '90px' }} className='pl2 pr1 tr f6 spacegrotesk flex-none db mw4'>
               <span>
                 {t('app:terms.pinStatus')}
               </span>
             </div>
-            <div style={{ color: 'rgba(255, 255, 255, 1)' }} className='pl2 pr4 tr f6 spacegrotesk flex-none db mw4 w-10'>
+            <div style={{ color: 'rgba(255, 255, 255, 1)', width: '150px' }} className='pl2 pr4 tc f6 spacegrotesk flex-none db mw4 w-10'>
               <button aria-label={t('sortBy', { name: t('size') })} onClick={changeSort(sorts.BY_SIZE)}>
                 {t('app:terms.size')} {sortByIcon(sorts.BY_SIZE)}
               </button>
             </div>
-            <div className='pa2' style={{ minWidth: '44px' }} />
+            <div className='pa2' style={{ minWidth: '44px', width: '40px' }} />
           </header>
           <WindowScroller>
             {({ height, isScrolling, onChildScroll, scrollTop }) => (

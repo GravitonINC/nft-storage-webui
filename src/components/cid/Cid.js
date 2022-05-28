@@ -26,7 +26,7 @@ const Cid = React.forwardRef(({ value, title, style, identicon = false, peersMap
   return (
     <abbr title={title || value} style={style} ref={ref} {...props}>
       {/* { identicon && <Identicon cid={value} className='mr2' /> } */}
-      <span className={'spacegrotesk ' + peersMap ? 'white' : 'white'}>
+      <span className={'robotomono ' + peersMap ? 'white' : 'white'}>
         <span>{start}</span>
         <span>…</span>
         <span>{end}</span>

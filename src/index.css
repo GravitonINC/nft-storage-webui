@@ -1,5 +1,5 @@
 @import "./reset.css";
-@import "../node_modules/tachyons";
+@import "../node_modules/tachyons/css/tachyons.min.css";
 /* They forgot to include word break: https://github.com/tachyons-css/tachyons/issues/563 */
 @import "../node_modules/tachyons/src/_word-break.css";
 @import "../node_modules/ipfs-css";
@@ -188,6 +188,24 @@ body,
   src: url("./assets/fonts/SpaceGrotesk-Regular.otf");
 }
 
+
+@font-face {
+  font-family: "RobotoMono-Bold";
+  src: url("./assets/fonts/roboto/RobotoMono-Bold.ttf");
+}
+@font-face {
+  font-family: "RobotoMono-Light";
+  src: url("./assets/fonts/roboto/RobotoMono-Light.ttf");
+}
+@font-face {
+  font-family: "RobotoMono-Medium";
+  src: url("./assets/fonts/roboto/RobotoMono-Medium.ttf");
+}
+@font-face {
+  font-family: "RobotoMono-Regular";
+  src: url("./assets/fonts/roboto/RobotoMono-Regular.ttf");
+}
+
 .spacegrotesk {
   font-family: "SpaceGrotesk-Regular";
 }
@@ -199,6 +217,19 @@ body,
 }
 .spacegrotesk-medium {
   font-family: "SpaceGrotesk-Medium";
+}
+
+.robotomono {
+  font-family: "RobotoMono-Regular";
+}
+.robotomono-bold {
+  font-family: "RobotoMono-Bold";
+}
+.robotomono-light {
+  font-family: "RobotoMono-Light";
+}
+.robotomono-medium {
+  font-family: "RobotoMono-Medium";
 }
 
 .backdrop-filter {

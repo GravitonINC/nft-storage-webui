@@ -83,8 +83,8 @@ const PublicGatewayForm = ({ t, doUpdatePublicGateway, publicGateway }) => {
           />
 
           <BlueBorderButton
-            width='100px'
-            height='28px'
+            width='84px'
+            height='30px'
             bg='bg-charcoal'
             className='tc'
             disabled={value === DEFAULT_GATEWAY}
@@ -94,8 +94,8 @@ const PublicGatewayForm = ({ t, doUpdatePublicGateway, publicGateway }) => {
             </RetroText>
           </BlueBorderButton>
           <BlueGradientButton
-            width='100px'
-            height='28px'
+            width='84px'
+            height='30px'
             className=' mt0-l ml2-l tc'
             disabled={!isValidGatewayUrl || value === publicGateway}>
             <RetroText color={!isValidGatewayUrl || value === publicGateway ? 'white' : 'white'}>

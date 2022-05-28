@@ -127,7 +127,7 @@ const File = ({
           </div>
         </button>
 
-        <div className='ph2 pv1 db tr mw3 w-20 transition-all flex justify-center'>
+        <div className='ph2 pv1 db tr mw3 w-20 transition-all flex justify-center' style={{ width: '90px' }}>
           {
             !pinned && <FileListPicIcon color='#312F62' />
           }
@@ -139,11 +139,20 @@ const File = ({
             <FileListPinGreenIcon />
           </div>}
         </div>
-        <div className='size pl2 pr4 pv1 f6 db tr w95fa white w-10 mw4 flex justify-center spacegrotesk' style={{ textTransform: 'lowercase' }}>
+        <div className='size pl2 pr4 pv1 f6 db tr w95fa white w-10 mw4 flex justify-center spacegrotesk' style={{ textTransform: 'lowercase', width: '150px' }}>
           {size}
         </div>
-        <div ref={dotsWrapper} className='ph2 db button-inside-focus' aria-label={t('checkboxLabel', { name })} >
-          <RetroButton width='28px' height='28px' border='none' onClick={handleCtxLeftClick} className='ph2 db button-inside-focus' aria-label={t('checkboxLabel', { name })} >
+        <div ref={dotsWrapper} className='ph2 db button-inside-focus' aria-label={t('checkboxLabel', { name })} style={{ width: '40px' }} >
+          <RetroButton
+            width='28px'
+            height='28px'
+            border='none'
+            activeBgColor='transparent'
+            focusBgColor='transparent'
+            onClick={handleCtxLeftClick}
+            className='ph2 db button-inside-focus'
+            aria-label={t('checkboxLabel', { name })}
+          >
             <More3dotsIcon />
           </RetroButton>
         </div>

@@ -182,20 +182,20 @@ const PeerInfo = connect('selectPeerLocationsForSwarm', ({ ids, peerLocationsFor
     <div className="f6 flex flex-column justify-center">
       {peers.sort((a, b) => a.address.localeCompare(b.address)).map((peer, index) => {
         if (index === MAX_PEERS && peers.length > MAX_PEERS) {
-          return (<div className="f7 pa1 self-end" key="worldmap-more-label">{t('plusPeers', { number: peers.length - MAX_PEERS })}</div>)
+          return (<div className="f7 pa1 self-end white" key="worldmap-more-label">{t('plusPeers', { number: peers.length - MAX_PEERS })}</div>)
         }
 
         if (index > MAX_PEERS) return null
 
         return (
-          <div className="pa2 f7 flex items-center w95fa retro-black" key={peer.peerId}>
+          <div className="pa2 f7 flex items-center spacegrotesk retro-black" key={peer.peerId}>
             <CountryFlag className='mr1' code={peer.flagCode} svg={isWindows} />
             <div className="flex flex-auto items-center">
               <Address peersMap value={peer.address} />
-              <span>/p2p/</span>
+              <span className='white robotomono'>/p2p/</span>
               <Cid peersMap value={peer.peerId} />
             </div>
-            <span className="gray ml1"> ({peer.latency || '???'}ms)</span>
+            <span className="gray ml1 robotomono"> ({peer.latency || '???'}ms)</span>
           </div>
         )
       })}

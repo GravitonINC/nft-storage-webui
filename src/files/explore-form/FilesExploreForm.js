@@ -112,14 +112,14 @@ class FilesExploreForm extends React.Component {
         </div>
         <div className='files-explore-form-buttons flex flex-row-reverse'>
           <RetroButton minHeight='28px' border='none' height='40px' style={{ marginLeft: '1px' }} disabled={!this.isValid} onClick={this.onInspect}>
-            <RetroText color={!this.isValid ? '#9C9C9C' : '#000'} textTransform='capitalize'>
+            <RetroText color={!this.isValid ? 'white' : '#000'} textTransform='capitalize'>
               {t('satus:active')}
             </RetroText>
             <GreenCircleIcon />
           </RetroButton>
           <div className='retro-h-divider' style={{ height: 30, margin: 'auto' }}></div>
           <RetroButton minHeight='28px' border='none' height='40px' style={{ marginLeft: '1px' }} disabled={!this.isValid} onClick={this.onBrowse}>
-            <RetroText color={!this.isValid ? '#9C9C9C' : '#000'} textTransform='capitalize'>
+            <RetroText color={!this.isValid ? 'white' : '#000'} textTransform='capitalize'>
               {t('satus:info')}
             </RetroText>
             <InfoCirleIcon />

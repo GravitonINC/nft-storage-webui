@@ -1,8 +1,20 @@
 /* eslint-disable space-before-function-paren */
 import styled from 'styled-components'
-// import { getBoxShadow } from './utils'
-
 // const colors = ['#464646', '#fff']
+
+const StyledContainer = styled.div`
+  /* Basic */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  /* background: #110D21; */
+  border-radius: ${p => p.borderRadius};
+  color:white;
+`
 
 const StyledButton = styled.button`
   /* Basic */
@@ -30,24 +42,34 @@ const StyledButton = styled.button`
     top: 0;
     bottom: 0;
     border-radius: ${p => p.borderRadius};
-    border: 3px solid transparent;
-    background: #fff4;
+    border: 1px solid transparent;
+    /* background: #fff4; */
+    background: linear-gradient(35deg, #FF7F69 5.46%, #FF2D83 30.27%, #6695FF 88.28%);
+
+    background-size: 110%;
+    background-position: center center;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
+    transition: all ease 0.3s;
     /* &:hover{
       background: linear-gradient(145.9deg, #FF7F69 5.46%, #FF2D83 30.27%, #6695FF 88.28%);
     } */
   }
   &:hover{
     &:before{
-      background: linear-gradient(145.9deg, #FF7F69 5.46%, #FF2D83 30.27%, #6695FF 88.28%);
-      background-size: 300%;
+      background: linear-gradient(60deg, #FF7F69 5.46%, #FF2D83 30.27%, #6695FF 88.28%);
+      background-size: 210%;
       background-position: center center;
     }
-    /* background: linear-gradient(145.9deg, #FF7F69 5.46%, #FF2D83 30.27%, #6695FF 88.28%);
-    background-size: 300%;
-    background-position: right center; */
+
+    ${StyledContainer} {
+      background: linear-gradient(143.6deg, #FF2D83 -11.88%, #6695FF 80.25%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
   }
   /* States */
   &:active {
@@ -60,20 +82,6 @@ const StyledButton = styled.button`
     /* padding: 0;
     border: ${p => '1px dashed #1E1E1E'}; */
   }
-`
-
-const StyledContainer = styled.div`
-  /* Basic */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1px;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  margin: 1px;
-  /* background: #110D21; */
-  border-radius: ${p => p.borderRadius};
-  color:white;
 `
 
 export default function RetroGradientButton({

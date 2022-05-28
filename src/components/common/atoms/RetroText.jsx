@@ -4,8 +4,8 @@ const StyledText = styled.p`
   /* Basic */
   position: relative;
   top: ${p => p.top};
+  flex: ${p => p.flex};
   margin: 0 5px;
-
   /* Fonts */
   color: ${p => p.isActive ? p.activeColor : p.color};
   font-family: ${p => p.fontFamily};
@@ -15,9 +15,9 @@ const StyledText = styled.p`
 
 `
 
-export default function RetroText ({ color = '#000', fontFamily = 'SpaceGrotesk-Regular', activeColor = '#110D21', isActive, fontSize = 12, top = '1px', children, ...rest }) {
+export default function RetroText ({ color = '#000', flex = 'auto', fontFamily = 'SpaceGrotesk-Regular', activeColor = '#110D21', isActive, fontSize = 12, top = '1px', children, ...rest }) {
   return (
-    <StyledText color={color} activeColor={activeColor} fontFamily={fontFamily} fontSize={fontSize} isActive={isActive} top={top} {...rest}>
+    <StyledText color={color} activeColor={activeColor} fontFamily={fontFamily} fontSize={fontSize} isActive={isActive} top={top} flex={ flex } {...rest}>
       {children}
     </StyledText>
   )

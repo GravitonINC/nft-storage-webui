@@ -6,10 +6,14 @@
   color: white;
 }
 .context-menu-container {
-  background: #110d2118 !important;
-  border: 1px solid rgba(255, 255, 255, 0.356);
-  box-sizing: border-box;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: #312f6254 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px) !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* background: #110d2118 !important; */
+  /* box-sizing: border-box; */
+  /* backdrop-filter: blur(8px); */
+  /* -webkit-backdrop-filter: blur(8px); */
 }
 

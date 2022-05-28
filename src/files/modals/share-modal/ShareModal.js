@@ -39,10 +39,10 @@ const ShareModal = ({ t, tReady, onLeave, link, files, className, ...props }) =>
     </ModalBody>
 
     <ModalActions className='ph3'>
-      <RetroGradientButton width='calc((100% - 40px) / 2)' onClick={onLeave} height='38px'>
-        <RetroText className="white tc spacegrotesk">
-          {t('app:actions.close')}
-        </RetroText>
+      <RetroGradientButton className='spacegrotesk fs12' width='calc((100% - 40px) / 2)' onClick={onLeave} height='38px'>
+        {/* <RetroText className="white tc spacegrotesk"> */}
+        {t('app:actions.close')}
+        {/* </RetroText> */}
       </RetroGradientButton>
       <CopyToClipboard text={link} onCopy={onLeave}>
         <FullGradientButton width='calc((100% - 40px) / 2)' height='38px'>

@@ -53,7 +53,7 @@ export class PeersTable extends React.Component {
     const value = rowData.location || this.props.t('app:terms.unknown')
     return (
       <CopyToClipboard text={value} onCopy={() => copyFeedback(ref, this.props.t)}>
-        <span title={value} className='copyable spacegrotesk white' ref={ref}>
+        <span title={value} className='copyable robotomono white fs10' ref={ref}>
           {location}
         </span>
       </CopyToClipboard>
@@ -63,8 +63,8 @@ export class PeersTable extends React.Component {
   latencyCellRenderer = ({ cellData }) => {
     const style = { width: '60px' }
     const latency = `${cellData}ms`
-    if (cellData == null) return (<span className='dib spacegrotesk white o-40 no-select' style={style}>-</span>)
-    return (<span className='dib w95fa white no-select'>{latency}</span>)
+    if (cellData == null) return (<span className='dib robotomono fs10 white o-40 no-select' style={style}>-</span>)
+    return (<span className='dib robotomono fs10 white no-select'>{latency}</span>)
   }
 
   peerIdCellRenderer = ({ cellData: peerId }) => {
@@ -72,7 +72,7 @@ export class PeersTable extends React.Component {
     const p2pMultiaddr = `/p2p/${peerId}`
     return (
       <CopyToClipboard text={p2pMultiaddr} onCopy={() => copyFeedback(ref, this.props.t)}>
-        <Cid value={peerId} identicon ref={ref} className='copyable white spacegrotesk' />
+        <Cid value={peerId} identicon ref={ref} className='copyable white robotomono fs10' />
       </CopyToClipboard>
     )
   }
@@ -85,7 +85,7 @@ export class PeersTable extends React.Component {
       <CopyToClipboard text={protocols} onCopy={() => copyFeedback(ref, this.props.t)}>
         <span
           ref={ref}
-          className='copyable spacegrotesk white'
+          className='copyable robotomono white fs10'
           title={title}>
           {protocols.replaceAll('[unnamed]', '🤔')}
         </span>
@@ -105,7 +105,7 @@ export class PeersTable extends React.Component {
       <CopyToClipboard text={p2pMultiaddr} onCopy={() => copyFeedback(ref, this.props.t)}>
         <abbr
           ref={ref}
-          className='copyable spacegrotesk white'
+          className='copyable robotomono white fs10'
           title={title}>
           {rowData.connection}
         </abbr>
@@ -123,7 +123,7 @@ export class PeersTable extends React.Component {
 
     const sortedList = (peerLocationsForSwarm || []).sort(sortByProperty(sortBy, sortDirection === SortDirection.ASC ? 1 : -1))
     const tableHeight = peerLocationsForSwarm ? (36 * peerLocationsForSwarm.length + 32) : 32
-    const styleOfRoot = { maxWidth: 1764 }
+    const styleOfRoot = { maxWidth: 1764, height: '350px', overflowY: 'auto', overflowX: 'hidden' }
 
     return (
       <div className={`center ${className}`} style={styleOfRoot}>
@@ -133,7 +133,7 @@ export class PeersTable extends React.Component {
               autoHeight={true}
               className='tl fw4 w-100 f6 peerstable'
               headerClassName='spacegrotesk white-60 ttc fs12 fw4 tracked ph2 no-select'
-              rowClassName='peersTableItem'
+              rowClassName='peersTableItem robotomono'
               width={width}
               height={tableHeight}
               headerHeight={32}

@@ -10,7 +10,7 @@ import './LanguageSelector.css'
 import BlueBorderButton from '../common/atoms/BlueBorderButton'
 
 import RetroText from '../common/atoms/RetroText'
-import SectionIcon from '../../icons/retro/SectionIcon'
+// import SectionIcon from '../../icons/retro/SectionIcon'
 import ArrowDownIcon from '../../icons/retro/ArrowDownIcon'
 import i18n, { localesList } from '../../i18n'
 import { connect } from 'redux-bundler-react'
@@ -50,13 +50,15 @@ class LanguageSelector extends Component {
       <Fragment>
         <div className='flex flex-column items-end'>
           <BlueBorderButton
-            className="tl flex justify-between items-center pr2"
+            className="tl flex justify-start items-center pl4 pr3"
             bg='bg-teal'
-            width='200px'
+            width='280px'
+            height='40px'
             onClick={this.onLanguageEditOpen}
           >
-            <RetroText color='white' className='spacegrotesk'>
-              <SectionIcon style={{ position: 'relative', left: '-20px', top: '-1px' }} />
+            <img src={Flags[i18n.language]} alt={i18n.language} width={24} height={24} className='pr2'/>
+            <RetroText color='white' fontFamily='RobotoMono-Regular' fontSize={12} flex={1}>
+              {/* <SectionIcon style={{ position: 'relative', left: '-20px', top: '-1px' }} /> */}
               {getCurrentLanguage()}
             </RetroText>
             <ArrowDownIcon />
@@ -68,7 +70,7 @@ class LanguageSelector extends Component {
                   key={`lang-${lang.locale}`}
                   className='pa2 lang-button-w flex nowrap bg-transparent bn outline-0 spacegrotesk fs12 white justify-start'
                   onClick={() => this.handleClick(lang.locale)}>
-                  <div className="flex items-center">
+                  <div className="flex items-center robotomono fs12">
                     <img src={Flags[lang.locale]} alt={lang.locale} width={24} height={24} />
                     &nbsp;&nbsp;{lang.nativeName}
                   </div>

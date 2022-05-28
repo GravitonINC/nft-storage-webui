@@ -13,7 +13,7 @@ import ContextMenuItem from '../context-menu/ContextMenuItem'
 import RetroButton from '../common/atoms/RetroButton'
 import RetroGradientButton from '../common/atoms/RetroGradientButton'
 
-import RetroText from '../common/atoms/RetroText'
+// import RetroText from '../common/atoms/RetroText'
 import OptionsIcon from '../../icons/retro/OptionsIcon'
 
 import './PinningManager.css'
@@ -71,7 +71,7 @@ export const PinningManager = ({ pinningServices, ipfsReady, arePinningServicesS
             {({ width }) => (
               <Table
                 className='tl fw4 w-100 f6'
-                headerClassName='ttc spacegrotesk fw4 f6 white-60 '
+                headerClassName='ttc spacegrotesk fw4 fs12 white-60 '
                 width={width}
                 height={(sortedList.length + 1) * ROW_HEIGHT}
                 headerHeight={HEADER_HEIGHT}
@@ -82,18 +82,20 @@ export const PinningManager = ({ pinningServices, ipfsReady, arePinningServicesS
                 sort={(...sortArgs) => setSortSettings(...sortArgs)}
                 sortBy={sortSettings.sortBy}
                 sortDirection={sortSettings.sortDirection}>
-                <Column label={t('service')} title={t('service')} dataKey='name' width={width * 0.4} flexShrink={0} flexGrow={1} cellRenderer={ServiceCell} className='truncate spacegrotesk f6' />
+                <Column label={t('service')} title={t('service')} dataKey='name' width={width * 0.4} flexShrink={0} flexGrow={1} cellRenderer={ServiceCell} className='truncate robotomono fs10' />
                 {/* <Column label={t('size')} title={t('size')} dataKey='totalSize' width={width * 0.2} flexShrink={0} cellRenderer={({ rowData }) => <SizeCell rowData={rowData} t={t}/>} className='charcoal truncate f6 pl2' /> */}
-                <Column label={t('pins')} title={t('pins')} dataKey='numberOfPins' width={width * 0.2} flexShrink={1} cellRenderer={({ rowData }) => <NumberOfPinsCell rowData={rowData} t={t} />} className='truncate spacegrotesk f6 pl2' />
-                <Column label={t('autoUpload')} title={t('autoUpload')} dataKey='autoUpload' width={width * 0.2} flexShrink={1} cellRenderer={({ rowData }) => <AutoUploadCell autoUpload={rowData.autoUpload} type={rowData.type} name={rowData.name} visitServiceUrl={rowData.visitServiceUrl} doRemovePinningService={doRemovePinningService} t={t} onToggleModalOpen={onToggleModalOpen} />} className='pinningManagerColumn truncate spacegrotesk f6 pl2' />
+                <Column label={t('pins')} title={t('pins')} dataKey='numberOfPins' width={width * 0.2} flexShrink={1} cellRenderer={({ rowData }) => <NumberOfPinsCell rowData={rowData} t={t} />} className='truncate robotomono fs10 pl2' />
+                <Column label={t('autoUpload')} title={t('autoUpload')} dataKey='autoUpload' width={width * 0.2} flexShrink={1} cellRenderer={({ rowData }) => <AutoUploadCell autoUpload={rowData.autoUpload} type={rowData.type} name={rowData.name} visitServiceUrl={rowData.visitServiceUrl} doRemovePinningService={doRemovePinningService} t={t} onToggleModalOpen={onToggleModalOpen} />} className='pinningManagerColumn truncate robotomono fs10 pl2' />
               </Table>
             )}
           </AutoSizer>
         </div>
         {arePinningServicesSupported &&
           (<div className='flex justify-end w-100 mt2 '>
-            <RetroGradientButton width='110px' height='38px' className="tc mt2" bg='bg-navy' onClick={onModalOpen}>
-              <RetroText color='white' className='spacegrotesk'>{t('actions.addService')}</RetroText>
+            <RetroGradientButton width='105px' height='30px' className="tc mt2 fs12 spacegrotesk" bg='bg-navy' onClick={onModalOpen}>
+              {/* <RetroText color='white' className='spacegrotesk'> */}
+              {t('actions.addService')}
+              {/* </RetroText> */}
             </RetroGradientButton>
           </div>
           )}

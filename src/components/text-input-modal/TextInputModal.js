@@ -137,10 +137,10 @@ class TextInputModal extends React.Component {
         </ModalBody>
 
         <ModalActions justify='between'>
-          <RetroGradientButton width='calc((100% - 40px) / 2)' height='38px' onClick={onCancel} style={{ textAlign: 'center' }}>
-            <RetroText color='white'>
-              {t('actions.cancel')}
-            </RetroText>
+          <RetroGradientButton className='fs12 white' width='calc((100% - 40px) / 2)' height='38px' onClick={onCancel} style={{ textAlign: 'center' }}>
+            {/* <RetroText color='white'> */}
+            {t('actions.cancel')}
+            {/* </RetroText> */}
           </RetroGradientButton>
           {/* <RetroButton width='120px' onClick={onCancel}>
 

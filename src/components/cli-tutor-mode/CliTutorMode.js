@@ -41,10 +41,10 @@ export const CliTutorialModal = ({ command, t, onLeave, className, downloadConfi
 
       <ModalActions>
         <div className='w-100 flex items-center justify-around mt2'>
-          <RetroGradientButton width='120px' minHeight='38px' height='38px' className=' tc' bg='bg-gray' onClick={onLeave}>
-            <RetroText className='spacegrotesk white'>
-              {t('app:actions.close')}
-            </RetroText>
+          <RetroGradientButton width='120px' minHeight='38px' height='38px' className=' tc fs12' bg='bg-gray' onClick={onLeave}>
+            {/* <RetroText className='spacegrotesk white'> */}
+            {t('app:actions.close')}
+            {/* </RetroText> */}
           </RetroGradientButton>
           <div className='flex items-center'>
             {

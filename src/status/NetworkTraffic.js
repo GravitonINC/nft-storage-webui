@@ -99,20 +99,16 @@ class NetworkTraffic extends React.Component {
       bits: false
     })
 
-    console.log({
-      downGrowRate, upGrowRate
-    })
-
     return (
-      <div style={{ marginLeft: '15px', marginTop: 10 }} className='flex flex-column justify-between h-100'>
+      <div style={{ marginTop: 10 }} className='flex flex-column justify-between h-100'>
         {/* <Title>{t('networkTraffic')}</Title> */}
         <TrafficWidgetContainer>
-          <RetroContainer padding={5} margin={5} className='flex flex-column justify-between' minWidth='190px' width='fit-content' height='74px'>
-            <div className='flex flex-row' style={{ alignItems: 'center' }}>
-              <RetroText fontFamily='PixM' color='white'>
+          <RetroContainer margin={5} className='flex flex-column justify-between mt1' minWidth='220px' width='270px' height='74px'>
+            <div className='flex flex-row  ph3 pv2 ' style={{ alignItems: 'center', height: '100%' }}>
+              <RetroText color='white' fontSize={16} className='pr2'>
                 {t('app:terms.downSpeed')}
               </RetroText>
-              <div>
+              <div className='pl2 bl' style={{ borderLeftColor: '#312F62' }}>
                 <RetroContainer inset className='flex flex-row' style={{ alignItems: 'center' }} bgColor={'transparent'}>
                   <div style={{ fontWeight: 700, fontSize: '20px', lineHeight: '26px', color: 'white' }}>
                     {down[0]}
@@ -125,12 +121,12 @@ class NetworkTraffic extends React.Component {
               </div>
             </div>
           </RetroContainer>
-          <RetroContainer padding={5} margin={5} className='flex flex-column justify-between' minWidth='190px' width='fit-content' height='74px'>
-            <div className='flex flex-row' style={{ alignItems: 'center' }}>
-              <RetroText fontFamily='PixM' color='white'>
+          <RetroContainer padding={5} margin={5} className='flex flex-column justify-between  mt1' minWidth='220px' width='270px' height='74px'>
+            <div className='flex flex-row ph3 pv2 ' style={{ alignItems: 'center', height: '100%' }}>
+              <RetroText color='white' fontSize={16} className='pr2'>
                 {t('app:terms.upSpeed')}
               </RetroText>
-              <div>
+              <div className='pl2 bl' style={{ borderLeftColor: '#312F62' }}>
                 <RetroContainer inset className='flex flex-row' style={{ alignItems: 'center' }} bgColor={'transparent'}>
                   <div style={{ fontWeight: 700, fontSize: '20px', lineHeight: '26px', color: 'white' }}>
                     {up[0]}

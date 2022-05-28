@@ -81,22 +81,22 @@ class FileInput extends React.Component {
             onDismiss={this.toggleDropdown} >
             <Option onClick={this.onAddFile} id='add-file' onCliTutorMode={() => this.onCliTutorMode(cliCmdKeys.ADD_FILE)}
               isCliTutorModeEnabled={isCliTutorModeEnabled}>
-              <FileMenuIcon />&nbsp;&nbsp;&nbsp;
+              <FileMenuIcon width='25' height='25'/>&nbsp;&nbsp;&nbsp;
               {t('app:terms.file')}
             </Option>
             <Option onClick={this.onAddFolder} id='add-folder' onCliTutorMode={() => this.onCliTutorMode(cliCmdKeys.ADD_DIRECTORY)}
               isCliTutorModeEnabled={isCliTutorModeEnabled}>
-              <FileMenuFolderIcon />&nbsp;&nbsp;&nbsp;
+              <FileMenuFolderIcon width='22' height='23'/>&nbsp;&nbsp;&nbsp;
               {t('app:terms.folder')}
             </Option>
             <Option onClick={this.onAddByPath} id='add-by-path' onCliTutorMode={() => this.onCliTutorMode(cliCmdKeys.FROM_IPFS)}
               isCliTutorModeEnabled={isCliTutorModeEnabled}>
-              <FileMenuLocationIcon />&nbsp;&nbsp;&nbsp;&nbsp;
+              <FileMenuLocationIcon width='20' height='30'/>&nbsp;&nbsp;&nbsp;&nbsp;
               {t('addByPath')}
             </Option>
             <Option onClick={this.onNewFolder} id='add-new-folder' onCliTutorMode={() => this.onCliTutorMode(cliCmdKeys.CREATE_NEW_DIRECTORY)}
               isCliTutorModeEnabled={isCliTutorModeEnabled}>
-              <FileMenuAddIcon />&nbsp;&nbsp;&nbsp;
+              <FileMenuAddIcon width='23' height='23'/>&nbsp;&nbsp;&nbsp;
               {t('newFolder')}
             </Option>
           </DropdownMenu>

@@ -12,10 +12,10 @@ const Address = ({ value, peersMap = false }) => {
   const parts = ma.toString().split('/')
 
   return (
-    <div style={{ color: 'rgba(255, 255, 255, 0.6' }} className='w95fa'>
+    <div style={{ color: 'rgba(255, 255, 255, 0.6' }} className='robotomono white'>
       {parts.map((chunk, i) => (
         <span key={i}>
-          <span style={{ color: peersMap ? '#1E1E1E' : (protos.includes(chunk) ? '' : '#fff') }} className='force-select'>{chunk}</span>
+          <span style={{ color: peersMap ? '#fff' : (protos.includes(chunk) ? '' : '#fff') }} className='force-select'>{chunk}</span>
           {i < parts.length - 1 ? '/' : ''}
         </span>
       ))}

@@ -5,8 +5,8 @@ import Checkbox from '../checkbox/Checkbox'
 
 // import RetroButton from '../common/atoms/RetroButton'
 import RetroGradientButton from '../common/atoms/RetroGradientButton'
-import RetroText from '../common/atoms/RetroText'
-import SectionIcon from '../../icons/retro/SectionIcon'
+// import RetroText from '../common/atoms/RetroText'
+// import SectionIcon from '../../icons/retro/SectionIcon'
 
 const ExampleRequest = ({ url, method = 'GET' }) => {
   return (
@@ -74,17 +74,17 @@ const AnalyticsToggle = ({ analyticsActionsToRecord, analyticsConsent, doToggleC
   return (
     <React.Fragment>
       <Checkbox className='dib' onChange={doToggleAnalytics} checked={analyticsEnabled} label={
-        <span className='spacegrotesk f6 white'>
+        <span className='spacegrotesk fs12 white'>
           {t('AnalyticsToggle.label')}
         </span>
       } />
-      <div className='spacegrotesk f6 gray lh-copy'>
-        <p>{t('AnalyticsToggle.paragraph1')}</p>
-        <RetroGradientButton active={isOpen} height='38px' width='200px' onClick={() => setIsOpen(!isOpen)}>
-          <RetroText color='white' className='spacegrotesk'>
-            <SectionIcon style={{ position: 'relative', left: '-20px', top: '-1px', transform: isOpen ? 'rotate(90deg)' : '' }} />
-            {t('AnalyticsToggle.summary')}
-          </RetroText>
+      <div className='robotomono fs12 gray lh-copy'>
+        <p className='mb4'>{t('AnalyticsToggle.paragraph1')}</p>
+        <RetroGradientButton className='spacegrotesk fs12' active={isOpen} height='30px' width='195px' onClick={() => setIsOpen(!isOpen)}>
+          {/* <RetroText color='white' className='spacegrotesk'> */}
+          {/* <SectionIcon style={{ position: 'relative', left: '-20px', top: '-1px', transform: isOpen ? 'rotate(90deg)' : '' }} /> */}
+          {t('AnalyticsToggle.summary')}
+          {/* </RetroText> */}
         </RetroGradientButton>
         {isOpen && (
           <>

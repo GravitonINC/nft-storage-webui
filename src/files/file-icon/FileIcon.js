@@ -9,7 +9,8 @@ import CalcIcon from '../../icons/retro/files/CalcIcon'
 import MovieIcon from '../../icons/retro/files/MovieIcon'
 import TextIcon from '../../icons/retro/files/TextIcon'
 // import ImageIcon from '../../icons/retro/files/ImageIcon'
-import FileImageIcon from '../../icons/retro/FileImageIcon'
+// import FileImageIcon from '../../icons/retro/FileImageIcon'
+import FileJPGIcon from '../../icons/retro/files/FileJPGIcon'
 import FileGenIcon from '../../icons/retro/FileGenIcon'
 
 // import DefaultFileIcon from '../../icons/retro/files/DefaultFileIcon'
@@ -25,6 +26,11 @@ export default function FileIcon ({ name, type, cls = '' }) {
     return <UnknownIcon className={`fill-aqua ${cls}`} style={style} />
   }
 
+  if (type === 'file') {
+    const ext = name.split('.').pop()
+    console.log('ext:', ext, '  typeFromExt:', typeFromExt(name))
+  }
+
   switch (typeFromExt(name)) {
     case 'audio':
       return <AudioIcon className={`fill-aqua ${cls}`} style={style} />
@@ -35,7 +41,7 @@ export default function FileIcon ({ name, type, cls = '' }) {
     case 'text':
       return <TextIcon className={`fill-aqua ${cls}`} style={style} />
     case 'image':
-      return <FileImageIcon className={`fill-aqua ${cls}`} style={style} />
+      return <FileJPGIcon className={`fill-aqua ${cls}`} style={style} />
     default:
       return <FileGenIcon className={`fill-aqua ${cls}`} style={style} />
   }

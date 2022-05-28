@@ -34,7 +34,7 @@ const VersionLink = ({ agentVersion }) => {
   }
   return (
     <span>
-      <a href={url} className='link purple pixm f7' target='_blank' rel='noopener noreferrer'>
+      <a href={url} className='link purple robotomono f7' target='_blank' rel='noopener noreferrer'>
         {name}
       </a>
       <ReleaseLink agent={name} version={version} />
@@ -48,7 +48,7 @@ const ReleaseLink = ({ agent, version }) => {
   if (Object.prototype.hasOwnProperty.call(providers, agent)) {
     const releaseUrl = `${providers[agent].url}/releases/tag/v${version}`
     return (
-      <a href={releaseUrl} className='pixm f7 link white ml1' target='_blank' rel='noopener noreferrer'>
+      <a href={releaseUrl} className='robotomono f7 link white ml1' target='_blank' rel='noopener noreferrer'>
         v{version}
       </a>
     )

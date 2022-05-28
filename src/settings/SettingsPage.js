@@ -82,7 +82,7 @@ export const SettingsPage = ({
           <div className='lh-copy white'>
             <Title>{t('app:terms.apiAddress')}</Title>
             <Trans i18nKey='apiDescription' t={t}>
-              <p className='spacegrotesk f6'>If your node is configured with a <a className='link purple' href='https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#addresses' target='_blank' rel='noopener noreferrer'>custom API address</a>, including a port other than the default 5001, enter it here.</p>
+              <p className='robotomono fs12'>If your node is configured with a <a className='link purple' href='https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#addresses' target='_blank' rel='noopener noreferrer'>custom API address</a>, including a port other than the default 5001, enter it here.</p>
             </Trans>
             <ApiAddressForm style={{ marginRight: '-10px' }} />
           </div>
@@ -104,7 +104,7 @@ export const SettingsPage = ({
         <div className='lh-copy white'>
           <Title>{t('app:terms.anyshell')}</Title>
           <Trans i18nKey='publicGatewayDescription' t={t}>
-            <p className='spacegrotesk f6'>Choose which <a className='link purple' href="http://docs.ipfs.io/concepts/ipfs-gateway/#public-gateways" target='_blank' rel='noopener noreferrer'>public gateway</a> you want to use to open your files.</p>
+            <p className='robotomono fs12'>Choose which <a className='link purple' href="http://docs.ipfs.io/concepts/ipfs-gateway/#public-gateways" target='_blank' rel='noopener noreferrer'>public gateway</a> you want to use to open your files.</p>
           </Trans>
           <PublicGatewayForm />
         </div>
@@ -112,7 +112,7 @@ export const SettingsPage = ({
 
       <Box className='mb3 pa3 pa2 joyride-settings-pinning'>
         <Title>{t('pinningServices.title')}</Title>
-        <p className='ma0 mr2 lh-copy spacegrotesk gray f6'>
+        <p className='ma0 mr2 lh-copy robotomono gray fs12'>
           {arePinningServicesSupported
             ? t('pinningServices.description')
             : t('pinningServices.noPinRemoteDescription')
@@ -142,9 +142,9 @@ export const SettingsPage = ({
         <div className='spacegrotesk white'>
           <Title>{t('cliTutorMode')}</Title>
           <Checkbox className='dib' onChange={doToggleCliTutorMode} checked={isCliTutorModeEnabled}
-            label={<span className='f6 spacegrotesk lh-copy'>{t('cliToggle.label')}</span>} />
+            label={<span className='fs12 spacegrotesk lh-copy'>{t('cliToggle.label')}</span>} />
           <Trans i18nKey='cliDescription' t={t}>
-            <p className='f6 mv2'>Enable this option to display a "view code" <CLITutorIcon className='dib v-mid icon mh1 fill-white' style={{ height: 24 }} /> icon next to common IPFS commands. Clicking it opens a modal with that command's CLI code, so you can paste it into the IPFS command-line interface in your terminal.</p>
+            <p className='fs12 robotomono grayColor mv2'>Enable this option to display a "view code" <CLITutorIcon className='dib v-mid icon mh1 fill-white' style={{ height: 24 }} /> icon next to common IPFS commands. Clicking it opens a modal with that command's CLI code, so you can paste it into the IPFS command-line interface in your terminal.</p>
           </Trans>
         </div>
       </Box>
@@ -246,25 +246,25 @@ const SaveButton = ({ t, hasErrors, hasSaveFailed, hasSaveSucceded, isSaving, ha
 const SettingsInfo = ({ t, isIpfsConnected, isConfigBlocked, hasExternalChanges, hasSaveFailed, hasSaveSucceded, isLoading, config }) => {
   if (isConfigBlocked) {
     return (
-      <p className='ma0 lh-copy spacegrotesk white f6 mw7'>
+      <p className='ma0 lh-copy robotomono grayColor fs12 mw7'>
         {t('configApiNotAvailable')}
       </p>
     )
   } else if (!isIpfsConnected) {
     return (
-      <p className='ma0 lh-copy spacegrotesk white f6 mw7'>
+      <p className='ma0 lh-copy robotomono grayColor fs12 mw7'>
         {t('ipfsDaemonOffline')}
       </p>
     )
   } else if (!config) {
     return (
-      <p className='ma0 lh-copy spacegrotesk white f6 mw7'>
+      <p className='ma0 lh-copy robotomono grayColor fs12 mw7'>
         {isLoading ? t('fetchingSettings') : t('settingsUnavailable')}
       </p>
     )
   } else if (hasExternalChanges) {
     return (
-      <p className='ma0 lh-copy spacegrotesk red f6 mw7'>
+      <p className='ma0 lh-copy robotomono red fs12 mw7'>
         <Trans i18nKey='settingsHaveChanged' t={t}>
           The settings have changed, please click <strong>Reset</strong> to update the editor contents
         </Trans>
@@ -272,21 +272,21 @@ const SettingsInfo = ({ t, isIpfsConnected, isConfigBlocked, hasExternalChanges,
     )
   } else if (hasSaveFailed) {
     return (
-      <p className='ma0 lh-copy spacegrotesk red fw6 f5 mw7'>
+      <p className='ma0 lh-copy robotomono red fw6 fs12 mw7'>
         {t('errorOccured')}
         <span className='db fw4 f6 white-60'>{t('checkConsole')}</span>
       </p>
     )
   } else if (hasSaveSucceded) {
     return (
-      <p className='ma0 lh-copy spacegrotesk green fw6 f6 mw7'>
+      <p className='ma0 lh-copy robotomono green fw6 fs12 mw7'>
         {t('changesSaved')}
         <span className='db fw4 f6 charcoal-muted'>{t('settingsWillBeUsedNextTime')}</span>
       </p>
     )
   }
   return (
-    <p className='ma0 mr2 lh-copy spacegrotesk white f6'>
+    <p className='ma0 mr2 lh-copy robotomono grayColor fs12'>
       {t('ipfsConfigDescription')} <a href='https://github.com/ipfs/go-ipfs/blob/master/docs/config.md' rel='noopener noreferrer' target='_blank' className='link purple'>{t('ipfsConfigHelp')}</a>
     </p>
   )

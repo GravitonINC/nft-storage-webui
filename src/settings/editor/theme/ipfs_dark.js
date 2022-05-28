@@ -22,7 +22,7 @@ ace.define('ace/theme/ipfs_dark', ['require', 'exports', 'module', 'ace/lib/dom'
   }
   .ace-ipfs-dark .ace_rparen,
   .ace-ipfs-dark .ace_lparen {
-    color: #fff;
+    color: #fff3;
   }
   .ace-ipfs-dark .ace_cursor,
   .ace-ipfs-dark .ace_string.ace_regexp {

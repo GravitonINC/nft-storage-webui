@@ -56,48 +56,47 @@ class ContextMenu extends React.Component {
           translateY={-translateY}
           open={this.props.isOpen}
           onDismiss={this.props.handleClick}>
-
           <CopyToClipboard text={String(this.props.cid)} onCopy={this.props.handleClick}>
             <Option>
-              <FilecopyIcon />&nbsp;&nbsp;
+              <FilecopyIcon width="25" height="25" />&nbsp;&nbsp;
               {t('actions.copyHash')}
             </Option>
           </CopyToClipboard>
           {onInspect &&
-            <Option onClick={this.wrap('onInspect')}>
-              <FileShowIcon />&nbsp;&nbsp;
+            <Option onClick={this.wrap('onInspect')} className='pv2'>
+              <FileShowIcon width="25" height="25" />&nbsp;&nbsp;
               {t('app:actions.inspect')}
             </Option>
           }
           <Option onClick={this.wrap('onPinning')} isCliTutorModeEnabled={isCliTutorModeEnabled}
             onCliTutorMode={this.wrap('onCliTutorMode', cliCmdKeys.PIN_OBJECT)}>
-            <FilePinIcon />&nbsp;&nbsp;
+            <FilePinIcon width="25" height="25" />&nbsp;&nbsp;
             {t('app:actions.setPinning')}
           </Option>
           {!isUnknown && onDownload &&
             <Option onClick={this.wrap('onDownload')} isCliTutorModeEnabled={isCliTutorModeEnabled}
               onCliTutorMode={this.wrap('onCliTutorMode', cliCmdKeys.DOWNLOAD_OBJECT_COMMAND)}>
-              <FiledownloadIcon />&nbsp;&nbsp;
+              <FiledownloadIcon width="25" height="25" />&nbsp;&nbsp;
               {t('app:actions.download')}
             </Option>
           }
           {!isUnknown && isMfs && onRename &&
             <Option onClick={this.wrap('onRename')} isCliTutorModeEnabled={isCliTutorModeEnabled}
               onCliTutorMode={this.wrap('onCliTutorMode', cliCmdKeys.RENAME_IPFS_OBJECT)}>
-              <FileEditIcon />&nbsp;&nbsp;&nbsp;&nbsp;
+              <FileEditIcon width="20" height="20"/>&nbsp;&nbsp;&nbsp;&nbsp;
               {t('app:actions.rename')}
             </Option>
           }
           {!isUnknown && isMfs && onRemove &&
             <Option onClick={this.wrap('onRemove')} isCliTutorModeEnabled={isCliTutorModeEnabled}
               onCliTutorMode={this.wrap('onCliTutorMode', cliCmdKeys.REMOVE_FILE_FROM_IPFS)}>
-              <FileDeleteIcon color={'white'}/>&nbsp;&nbsp;&nbsp;&nbsp;
+              <FileDeleteIcon color={'white'} width='20' height='22'/>&nbsp;&nbsp;&nbsp;&nbsp;
               {t('app:actions.remove')}
             </Option>
           }
           {onShare &&
             <Option onClick={this.wrap('onShare')}>
-              <FileShareIcon />&nbsp;&nbsp;
+              <FileShareIcon width='25' height='25'/>&nbsp;&nbsp;
               {t('actions.share')}
             </Option>
           }
