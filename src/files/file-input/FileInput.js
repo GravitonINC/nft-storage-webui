@@ -18,7 +18,7 @@ import FileMenuAddIcon from '../../icons/retro/files/FileMenuAddIcon'
 const AddButton = withTranslation('app')(
   ({ t, onClick, active }) => (
     <FullGradientButton active={active} id='import-button' color='white' className='f6 flex justify-center items-center' minWidth='100px' onClick={onClick}>
-      <RetroText className='spacegrotesk white'>
+      <RetroText className='spacegrotesk white tc'>
         {t('actions.import')}
         <SectionIcon color={'white'} style={{ position: 'relative', left: '5px', transform: 'rotate(90deg)' }} />
       </RetroText>

@@ -70,8 +70,7 @@ class SubHeader extends React.Component {
                 onAddFiles={this.props.onAddFiles}
                 onAddByPath={this.props.onAddByPath}
                 onCliTutorMode={this.props.onCliTutorMode}
-              />
-              : <div ref={el => { this.dotsWrapper = el }}>
+              /> : <div ref={el => { this.dotsWrapper = el }} >
                 <FullGradientButton
                   className='f6 flex justify-center items-center'
                   // color='white'
@@ -80,7 +79,7 @@ class SubHeader extends React.Component {
                   active={this.props.isOpen}
                   disabled={!files || filesPathInfo.isRoot || files.type === 'unknown'}
                   onClick={this.handleContextMenu}>
-                  <RetroText className='spacegrotesk white'>
+                  <RetroText className='tc spacegrotesk' textAlign='center'>
                     {t('app:actions.more')}
                   </RetroText>
                 </FullGradientButton>
