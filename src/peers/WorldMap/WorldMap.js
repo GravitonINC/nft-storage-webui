@@ -20,15 +20,16 @@ const calculateWidth = (windowWidth) => {
   const svgWidthOversizeFactor = 1.845
   // remove a constant amount for the chrome that surronds the map.
   const sidebarAndPadding = 89
-  const availableWidth = windowWidth - sidebarAndPadding
+  const availableWidth = windowWidth * 0.84 - sidebarAndPadding
   const width = availableWidth * svgWidthOversizeFactor
   // if the map gets too big the dots get lost in the dot grid, also it just overloads the viewers brain.
   if (width > 3000) {
     return 3000
   }
   // if the map gets too small it becomes illegible. There will be some map cropping on mobile.
-  if (width < 700) {
-    return 700
+  const minW = 650 // 700
+  if (width < minW) {
+    return minW
   }
 
   return width

@@ -25,7 +25,7 @@ const PeersPage = ({ t, toursEnabled, handleJoyrideCallback, isCliTutorModeEnabl
       <CliTutorMode buttonClassName='black hover-white hover-bg-blue ph2' showIcon={true} command={cliCommandList[cliCmdKeys.ADD_NEW_PEER]()} t={t} />
     </div>
 
-    <Box className='pt3 ph3'>
+    <Box className='pt0 ph3' style={{ marginTop: -30 }}>
       <WorldMap className='joyride-peers-map' />
       <div className='mt2 flex justify-between pr0 pl3' >
         <p className='white spacegrotesk fs24' style={{ fontWeight: 700 }}>Files</p>
