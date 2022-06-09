@@ -1,7 +1,7 @@
 {
   "name": "ipfs-webui",
   "version": "2.13.0",
-  "private": true,
+    "private": true,
   "scripts": {
     "start": "run-script-os",
     "start:win32": "@powershell -Command $env:REACT_APP_GIT_REV=(git rev-parse --short HEAD); react-scripts start",
